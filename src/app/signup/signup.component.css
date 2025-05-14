@@ -28,7 +28,7 @@
 form {
   width: 100%;
   max-width: 400px;
-  height: 62vh;
+  height: 68vh;
   padding: 2rem;
   padding-top: 1rem;
   border-radius: 12px 12px 0 0;
@@ -122,18 +122,18 @@ button:hover {
 
 @media (min-width: 768px) {
   button {
-    margin-top: 1rem; /* Fixed from 'rem' to '1rem' */
+    margin-top: 0.5rem; /* Fixed from 'rem' to '1rem' */
   }
 
   .no-account {
-    margin-top: 1rem; /* Unchanged, kept for consistency */
+    margin-top: 0.5rem; /* Unchanged, kept for consistency */
     padding: 0.5rem 1rem;
   }
 
   form {
     padding: 3.5rem;
     padding-top: 2.5rem;
-    padding-bottom: 7.5rem; /* Increased for desktop */
+    padding-bottom: 9.5rem; /* Increased for desktop */
     margin-top: 8rem;
   }
 

@@ -1,0 +1,114 @@
+.front-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative; /* Ensures the background stays fixed and the content can move over it */
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1rem;
+  box-sizing: border-box; /* Prevent padding from breaking layout */
+  overflow: hidden; /* Prevents content overflow if pushed out of view */
+}
+
+.overlay {
+  text-align: center;
+  color: white;
+  width: 100%;
+  max-width: 90%; /* Ensures the overlay is responsive */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute; /* Position it absolutely relative to the front container */
+  top: 0; /* Start from the top of the container */
+  left: 50%;
+  transform: translateX(-50%); /* Center the overlay horizontally */
+  box-sizing: border-box;
+  z-index: 1; /* Ensure the content is above the background */
+}
+
+/* Move the H1 upward */
+.overlay h1 {
+  font-family: 'Lexend Giga', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  color: #BF6A02;
+  padding: 0.2rem 1rem;
+  border-radius: 8px;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  position: relative;
+  top: 135px; /* Move the heading up dynamically */
+  white-space: nowrap;
+}
+
+/* Group buttons and push them down */
+.button-group {
+  margin-top: 420px; /* Push buttons to the bottom */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Base button styling */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  font-family: 'Lexend Giga', sans-serif;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Specific styles for login and signup buttons */
+.login-button {
+  background-color: white;
+  color: #BF6A02;
+}
+
+.signup-button {
+  background-color: #BF6A02;
+  color: white;
+}
+
+/* Hover effects */
+.login-button:hover {
+  background-color: #BF6A02;
+  color: white;
+}
+
+.signup-button:hover {
+  background-color: white;
+  color: #BF6A02;
+}
+
+
+@media (min-width: 768px) {
+  .overlay {
+    max-width: 400px;
+    top: 120px;
+  }
+
+  .overlay h1 {
+    font-size: 2rem;
+    top: 0; /* Reset position if needed */
+    margin-bottom: 2rem;
+  }
+
+  .button-group {
+    margin-top: 300px; /* Adjust for desktop layout */
+  }
+
+  button {
+    font-size: 1.2rem;
+    max-width: 300px;
+  }
+}

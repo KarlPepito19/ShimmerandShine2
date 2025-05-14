@@ -1,0 +1,347 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f5e9e2; /* Light pinkish background */
+}
+
+/* Header */
+.header {
+  background: url('jewelry.jpg') no-repeat center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Search Bar */
+.search-bar {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.search-bar input {
+  width: 90%;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 16px;
+}
+
+/* Category Tabs */
+.category-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  justify-content: flex-start; /* Changed from center to start */
+  scroll-snap-type: x mandatory; /* Enable scroll snapping */
+}
+
+.category-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.category-tabs button {
+  padding: 8px 16px;
+  margin: 0 5px;
+  border: none;
+  background-color: #fff;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  min-width: 80px;
+  text-align: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.category-tabs button.active {
+  background-color: #d4a373;
+  color: white;
+}
+
+.category-tabs button:hover {
+  background-color: #d4a373;
+}
+
+/* Jewelry Grid */
+.jewelry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 10px 15px;
+  overflow-y: auto;
+  flex-grow: 1;
+  max-height: calc(100vh - 180px);
+  min-height: 0;
+}
+
+/* Scrollbar styling */
+.jewelry-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.jewelry-grid::-webkit-scrollbar-thumb {
+  background-color: #d4a373;
+  border-radius: 4px;
+}
+
+.jewelry-grid::-webkit-scrollbar-track {
+  background-color: #f5e9e2;
+}
+
+/* Jewelry Item Wrapper */
+.jewelry-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 5px;
+}
+
+/* Jewelry Item */
+.jewelry-item {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Adjusted in media query for desktop */
+}
+
+/* Item-specific background images */
+.item-necklace {
+  background-image: url('jewelry1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-necklace1 {
+  background-image: url('necklace2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-necklace2 {
+  background-image: url('necklace3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item-earrings {
+  background-image: url('earrings.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-earrings1 {
+  background-image: url('earrings1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-earrings2 {
+  background-image: url('earrings2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item-ring {
+  background-image: url('ring.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-ring1 {
+  background-image: url('ring1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-ring2 {
+  background-image: url('ring2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item-bracelet {
+  background-image: url('bracelet.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-bracelet1 {
+  background-image: url('bracelet1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-bracelet2 {
+  background-image: url('bracelet2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item-anklet {
+  background-image: url('anklet.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-anklet1 {
+  background-image: url('anklet1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-anklet2 {
+  background-image: url('anklet2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item-default {
+  background-image: url('jewelry1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Item Details */
+.item-details {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  min-height: 30px;
+  width: 100%;
+  gap: 10px;
+  font-size: 20px;
+}
+
+/* Heart Icon */
+.heart-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  position: sticky;
+  bottom: 0;
+  flex-shrink: 0;
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  transition: background-color 0.2s;
+}
+
+.bottom-nav button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+  .jewelry-item {
+    aspect-ratio: 4 / 3;
+    transition: transform 0.2s;
+    
+  }
+  .jewelry-item:hover {
+    transform: scale(1.05);
+  }
+  .app-container {
+    padding: 20px; /* Add padding for better spacing */
+    max-width: 1000px; /* Limit max width for large screens */
+    margin: 0 auto; /* Center the layout */
+  }
+
+  .header {
+    font-size: 20px; /* Larger header text */
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .search-bar input {
+    width: 60%; /* Narrower search bar on desktop */
+    font-size: 18px;
+    padding: 12px;
+  }
+
+  .category-tabs {
+    justify-content: center; /* Ensure left-aligned */
+    padding-left: 10px; /* Add padding to align with content */
+  }
+
+  .category-tabs button {
+    min-width: 70px; /* Slightly smaller buttons for small screens */
+    font-size: 13px;
+  }
+
+  .jewelry-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+    gap: 20px;
+    padding: 20px;
+    max-height: calc(100vh - 220px); /* Adjust for larger header/tabs */
+  }
+
+  .jewelry-item-wrapper {
+    margin: 0 10px;
+  }
+
+  .jewelry-item {
+    aspect-ratio: 4 / 3; /* Adjust for better image display */
+    transition: transform 0.2s; /* Add hover effect */
+  }
+
+  .jewelry-item:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+
+  .item-details {
+    font-size: 24px; /* Larger text */
+    padding: 10px 15px;
+    min-height: 40px;
+  }
+
+  .heart-icon {
+    font-size: 24px;
+  }
+
+  .bottom-nav {
+    padding: 10px;
+  }
+
+  .bottom-nav button {
+    font-size: 18px;
+    padding: 5px 20px;
+  }
+}

@@ -1,0 +1,47 @@
+<div class="app-container">
+  <!-- Header -->
+  <div class="header">
+    <h1>SHIMMER & SHINE</h1>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Search Trending jewelry..."
+      [(ngModel)]="searchTerm"
+    />
+  </div>
+
+  <!-- Category Tabs -->
+  <div class="category-tabs">
+    <button [class.active]="selectedTab === 'All'" (click)="selectTab('All')">All</button>
+    <div class="tabs-scrollable">
+      <button [class.active]="selectedTab === 'Necklaces'" (click)="selectTab('Necklaces')">Necklaces</button>
+      <button [class.active]="selectedTab === 'Earrings'" (click)="selectTab('Earrings')">Earrings</button>
+      <button [class.active]="selectedTab === 'Ring'" (click)="selectTab('Ring')">Ring</button>
+      <button [class.active]="selectedTab === 'Bracelets'" (click)="selectTab('Bracelets')">Bracelets</button>
+      <button [class.active]="selectedTab === 'Anklets'" (click)="selectTab('Anklets')">Anklets</button>
+    </div>
+  </div>
+
+  <!-- Jewelry Grid -->
+  <div class="jewelry-grid">
+    <div class="jewelry-item-wrapper" *ngFor="let item of filteredItems; let i = index">
+      <div class="jewelry-item" [ngClass]="getItemClass(item, i)">
+        <!-- Image is set via CSS background -->
+      </div>
+      <div class="item-details">
+        <span>{{ item.name }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <button (click)="onHomeClick()">🏠 Home</button>
+    <button (click)="onSearchClick()">🔍 Search</button>
+    <button (click)="onCartClick()">🛒 Cart</button>
+    <button (click)="onUserClick()">👤 User</button>
+  </div>
+</div>

@@ -122,11 +122,23 @@ button:hover {
 
 @media (min-width: 768px) {
   button {
-    margin-top: rem; /* Push the button further down */
+    margin-top: 1rem; /* Fixed from 'rem' to '1rem' */
   }
 
   .no-account {
-    margin-top: 1rem; /* Push the button further down */
+    margin-top: 1rem; /* Unchanged, kept for consistency */
+    padding: 0.5rem 1rem;
   }
 
+  form {
+    padding: 3.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 7.5rem; /* Increased for desktop */
+    margin-top: 8rem;
+  }
+
+  .login-container {
+    align-items: center; /* Ensure centering on desktop */
+  }
+  
 }

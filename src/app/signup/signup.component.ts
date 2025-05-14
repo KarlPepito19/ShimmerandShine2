@@ -7,12 +7,13 @@ import { Router, RouterModule } from '@angular/router';
   standalone: true,
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
-  imports: [FormsModule, RouterModule], // Add RouterModule
+  imports: [FormsModule, RouterModule],
 })
 export class SignupComponent {
   name: string = '';
   email: string = '';
   password: string = '';
+  confirmPassword: string = ''; // New property for confirm password
   submitted: boolean = false;
 
   constructor(private router: Router) {}
@@ -20,8 +21,14 @@ export class SignupComponent {
   onSubmit() {
     this.submitted = true;
 
-    if (!this.name || !this.email || !this.password) {
+    // Check if all fields are filled and passwords match
+    if (!this.name || !this.email || !this.password || !this.confirmPassword) {
       console.error('All fields are required.');
+      return;
+    }
+
+    if (this.password !== this.confirmPassword) {
+      console.error('Passwords do not match.');
       return;
     }
 

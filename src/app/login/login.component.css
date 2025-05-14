@@ -8,6 +8,11 @@
   padding: 0;
   overflow: hidden; 
 }
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
 
 .login-container::before {
   content: "";

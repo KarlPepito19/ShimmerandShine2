@@ -9,12 +9,53 @@
 .header {
   background: url('jewelry.jpg') no-repeat center;
   background-size: cover;
-  color: white;
-  text-align: center;
+  color: #BF6A02;
+  text-align: left;
   padding: 20px;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   flex-shrink: 0;
+  position: relative; /* For potential overlay */
+}
+
+.header-text {
+  font-family: 'Lexend Giga', sans-serif;
+  font-weight: bold;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column; /* Stack vertically in mobile */
+  gap:8px; /* Space between SHIMMER and SHINE */
+  text-align: left;
+
+}
+
+.header-text .shimmer,
+.header-text .shine {
+  letter-spacing: 3px; /* Preserve existing letter spacing */
+  margin: 0; /* Reset default margins */
+  display: block; /* Ensure each h1 takes its own line in mobile */
+}
+
+@media (min-width: 768px) {
+  .header {
+    font-size: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center; /* Center align in desktop */
+  }
+
+  .header-text {
+    flex-direction: row; /* Side by side in desktop */
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    gap: 20px; /* Space between SHIMMER and SHINE in desktop */
+    margin-right: 10rem;
+  }
+
+  .header-text .shimmer,
+  .header-text .shine {
+    display: inline-block; /* Inline-block for side-by-side layout */
+  }
 }
 
 /* Search Bar */
@@ -23,6 +64,7 @@
   display: flex;
   justify-content: center;
   flex-shrink: 0;
+  color: #757575;
 }
 
 .search-bar input {
@@ -42,8 +84,8 @@
   padding: 10px 5px;
   white-space: nowrap;
   flex-shrink: 0;
-  justify-content: flex-start; /* Changed from center to start */
-  scroll-snap-type: x mandatory; /* Enable scroll snapping */
+  justify-content: flex-start;
+  scroll-snap-type: x mandatory;
 }
 
 .category-tabs::-webkit-scrollbar {
@@ -62,15 +104,18 @@
   text-align: center;
   transition: all 0.2s;
   flex-shrink: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #757575;
 }
 
 .category-tabs button.active {
-  background-color: #d4a373;
+  background-color: #BF6A02;
   color: white;
 }
 
 .category-tabs button:hover {
-  background-color: #d4a373;
+  background-color: #BF6A02;
 }
 
 /* Jewelry Grid */
@@ -114,7 +159,7 @@
   overflow: hidden;
   text-align: center;
   width: 100%;
-  aspect-ratio: 1 / 1; /* Adjusted in media query for desktop */
+  aspect-ratio: 1 / 1;
 }
 
 /* Item-specific background images */
@@ -273,44 +318,44 @@
   .jewelry-item {
     aspect-ratio: 4 / 3;
     transition: transform 0.2s;
-    
   }
   .jewelry-item:hover {
     transform: scale(1.05);
   }
   .app-container {
-    padding: 20px; /* Add padding for better spacing */
-    max-width: 1000px; /* Limit max width for large screens */
-    margin: 0 auto; /* Center the layout */
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .header {
-    font-size: 20px; /* Larger header text */
+    font-size: 20px;
     padding: 30px;
     border-radius: 10px;
+    text-align: center;
   }
 
   .search-bar input {
-    width: 60%; /* Narrower search bar on desktop */
+    width: 60%;
     font-size: 18px;
     padding: 12px;
   }
 
   .category-tabs {
-    justify-content: center; /* Ensure left-aligned */
-    padding-left: 10px; /* Add padding to align with content */
+    justify-content: center;
+    padding-left: 10px;
   }
 
   .category-tabs button {
-    min-width: 70px; /* Slightly smaller buttons for small screens */
+    min-width: 70px;
     font-size: 13px;
   }
 
   .jewelry-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 20px;
-    max-height: calc(100vh - 220px); /* Adjust for larger header/tabs */
+    max-height: calc(100vh - 220px);
   }
 
   .jewelry-item-wrapper {
@@ -318,16 +363,16 @@
   }
 
   .jewelry-item {
-    aspect-ratio: 4 / 3; /* Adjust for better image display */
-    transition: transform 0.2s; /* Add hover effect */
+    aspect-ratio: 4 / 3;
+    transition: transform 0.2s;
   }
 
   .jewelry-item:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.05);
   }
 
   .item-details {
-    font-size: 24px; /* Larger text */
+    font-size: 24px;
     padding: 10px 15px;
     min-height: 40px;
   }

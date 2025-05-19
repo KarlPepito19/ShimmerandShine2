@@ -128,11 +128,11 @@ button:hover {
 
 @media (min-width: 768px) {
   button {
-    margin-top: 0.5rem; /* Push the button further down */
+    margin-top: 0.1rem; /* Push the button further down */
   }
 
   .no-account {
-    margin-top: 1rem; /* Push the button further down */
+    margin-top: 0.5rem; /* Push the button further down */
   }
   
 

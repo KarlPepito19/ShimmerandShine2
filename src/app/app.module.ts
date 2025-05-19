@@ -8,10 +8,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
+import { CartComponent } from './cart/cart.component';
 import { appRoutes } from './app.routes';
 
 @NgModule({
-  declarations: [], // No components here since all are standalone
+  declarations: [],
   imports: [
     BrowserModule,
     FormsModule,
@@ -20,7 +21,8 @@ import { appRoutes } from './app.routes';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CartComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -28,23 +28,48 @@
     </div>
   </div>
 
-  <!-- Jewelry Grid -->
-  <div class="jewelry-grid">
-    <div class="jewelry-item-wrapper" *ngFor="let item of filteredItems; let i = index">
-      <div class="jewelry-item" [ngClass]="getItemClass(item, i)">
-        <!-- Image is set via CSS background -->
-      </div>
-      <div class="item-details">
-        <span>{{ item.name }}</span>
+  <!-- Jewelry Grid with Scrollable Wrapper -->
+  <div class="scrollable-grid">
+    <div class="jewelry-grid">
+      <div class="jewelry-item-wrapper" *ngFor="let item of filteredItems" (click)="showItemDetails(item)">
+        <div class="jewelry-item" [ngClass]="getItemClass(item, item.categoryIndex)">
+          <!-- Image is set via CSS background -->
+        </div>
+        <div class="item-details">
+          <span>{{ item.name }}</span>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Bottom Navigation -->
-  <div class="bottom-nav">
-    <button (click)="onHomeClick()">🏠 Home</button>
-    <button (click)="onSearchClick()">🔍 Search</button>
-    <button (click)="onCartClick()">🛒 Cart</button>
-    <button (click)="onUserClick()">👤 User</button>
+  <!-- Item Detail Display -->
+  <div class="item-detail-overlay" *ngIf="selectedItem">
+    <app-item-detail [item]="selectedItem" (close)="selectedItem = null"></app-item-detail>
+  </div>
+
+  <!-- Bottom Navigation Container -->
+  <div class="bottom-nav-container">
+    <div class="bottom-nav">
+      <button (click)="onHomeClick()" aria-label="Home">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BF6A02" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+      </button>
+      
+      <button (click)="onCartClick()" aria-label="Cart">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BF6A02" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+      </button>
+      <button (click)="onUserClick()" aria-label="User">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BF6A02" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </button>
+    </div>
   </div>
 </div>

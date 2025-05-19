@@ -1,0 +1,265 @@
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #D9D9D9;
+  padding: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background: url('jewelry.jpg') no-repeat center;
+  background-size: cover;
+  color: #BF6A02;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #BF6A02;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.header h1 {
+  font-family: 'Lexend Giga', sans-serif;
+  font-weight: bold;
+  margin: 0;
+  font-size: 24px;
+}
+
+.cart-content {
+  flex-grow: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.scrollable-items {
+  max-height: 70vh; /* Adjust this value to control how much space the scrollable area takes */
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin-bottom: 20px; /* Space between scrollable items and summary */
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.cart-item {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.item-image {
+  width: 80px;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.item-details {
+  flex-grow: 1;
+}
+
+.item-details h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.item-details .price {
+  margin: 5px 0;
+  color: #BF6A02;
+  font-weight: bold;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-btn {
+  background: #D9D9D9;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.quantity-btn:hover {
+  background: #D9D9D9;
+}
+
+.quantity {
+  font-size: 16px;
+  color: #757575;
+}
+
+.cart-summary {
+  margin-top: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cart-summary p {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.total-price {
+  color: #BF6A02;
+  font-weight: bold;
+}
+
+.payment-btn {
+  width: 70%;
+  padding: 10px;
+  background: #BF6A02;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px auto 0; /* Center horizontally with margin-top 10px */
+  display: block; /* Ensure the button is a block element for margin: auto to work */
+}
+
+.payment-btn:hover {
+  background: #BF6A02;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 50px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.empty-cart p {
+  font-size: 18px;
+  color: #757575;
+}
+
+.empty-cart a {
+  color: #BF6A02;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.empty-cart a:hover {
+  text-decoration: underline;
+}
+
+/* Background images for categories */
+.item-necklace {
+  background-image: url('jewelry1.jpg');
+}
+.item-necklace1 {
+  background-image: url('necklace2.jpg');
+}
+.item-necklace2 {
+  background-image: url('necklace3.jpg');
+}
+.item-earrings {
+  background-image: url('earrings.jpg');
+}
+.item-earrings1 {
+  background-image: url('earrings1.jpg');
+}
+.item-earrings2 {
+  background-image: url('earrings2.jpg');
+}
+.item-ring {
+  background-image: url('ring.jpg');
+}
+.item-ring1 {
+  background-image: url('ring1.jpg');
+}
+.item-ring2 {
+  background-image: url('ring2.jpg');
+}
+.item-bracelet {
+  background-image: url('bracelet.jpg');
+}
+.item-bracelet1 {
+  background-image: url('bracelet1.jpg');
+}
+.item-bracelet2 {
+  background-image: url('bracelet2.jpg');
+}
+.item-anklet {
+  background-image: url('anklet.jpg');
+}
+.item-anklet1 {
+  background-image: url('anklet1.jpg');
+}
+.item-anklet2 {
+  background-image: url('anklet2.jpg');
+}
+.item-default {
+  background-image: url('jewelry1.jpg');
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  .cart-item {
+    padding: 15px;
+    width: 60%;
+  }
+  .item-image {
+    width: 100px;
+  }
+  .item-details h3 {
+    font-size: 18px;
+  }
+  .item-details .price {
+    font-size: 16px;
+  }
+  .quantity-btn {
+    width: 35px;
+    height: 35px;
+  }
+  .quantity {
+    font-size: 18px;
+  }
+  .cart-summary {
+    padding: 20px;
+    width: 60%;
+  }
+  .cart-summary p {
+    font-size: 20px;
+  }
+  .payment-btn {
+    font-size: 18px;
+    width: 60%;
+  }
+}

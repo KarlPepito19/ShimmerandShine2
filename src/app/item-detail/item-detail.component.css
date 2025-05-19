@@ -1,0 +1,182 @@
+.item-detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.item-detail-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.item-image {
+  width: 70%; /* Reduced to make the image smaller */
+  aspect-ratio: 1 / 1; /* Maintains a square aspect ratio */
+  background-size: contain; /* Ensures the full image is visible */
+  background-position: center;
+  margin: 0 auto 10px; /* Centers the div horizontally and keeps margin-bottom */
+  border-radius: 10px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+.price {
+  font-weight: bold;
+  color: #BF6A02;
+}
+
+.size-options button {
+  margin: 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+.size-options button.selected {
+  background: #d4a017;
+  color: white;
+}
+
+.add-to-cart {
+  
+  width: 100%;
+  padding: 10px;
+  background: #BF6A02;
+  color: #FDFBFB;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.add-to-cart svg {
+  margin-right: 5px;
+}
+
+/* Background images for categories */
+.item-necklace {
+  background-image: url('jewelry1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-necklace1 {
+  background-image: url('necklace2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-necklace2 {
+  background-image: url('necklace3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item-earrings {
+  background-image: url('earrings.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-earrings1 {
+  background-image: url('earrings1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-earrings2 {
+  background-image: url('earrings2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item-ring {
+  background-image: url('ring.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-ring1 {
+  background-image: url('ring1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-ring2 {
+  background-image: url('ring2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item-bracelet {
+  background-image: url('bracelet.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-bracelet1 {
+  background-image: url('bracelet1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-bracelet2 {
+  background-image: url('bracelet2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-anklet {
+  background-image: url('anklet.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-anklet1 {
+  background-image: url('anklet1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item-anklet2 {
+  background-image: url('anklet2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item-default {
+  background-image: url('jewelry1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

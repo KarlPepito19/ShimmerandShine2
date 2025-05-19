@@ -1,0 +1,34 @@
+<div class="cart-container">
+  <div class="header">
+    <button class="back-btn" (click)="router.navigate(['/home'])">←</button>
+    <h1>My Cart</h1>
+  </div>
+  <div class="cart-content">
+    <div class="scrollable-items">
+      <div class="cart-items" *ngIf="cartItems.length > 0; else emptyCart">
+        <div class="cart-item" *ngFor="let cartItem of cartItems; let i = index">
+          <div class="item-image" [ngClass]="getItemClass(cartItem.item)"></div>
+          <div class="item-details">
+            <h3>{{ cartItem.item.name }}</h3>
+            <p class="price">₱{{ cartItem.item.price }}</p>
+            <div class="quantity-controls">
+              <button class="quantity-btn" (click)="decrementQuantity(i)">-</button>
+              <span class="quantity">{{ cartItem.quantity }}</span>
+              <button class="quantity-btn" (click)="incrementQuantity(i)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #emptyCart>
+        <div class="empty-cart">
+          <p>Your cart is empty.</p>
+          <a routerLink="/home">Continue Shopping</a>
+        </div>
+      </ng-template>
+    </div>
+    <div class="cart-summary" *ngIf="cartItems.length > 0">
+      <p>Sub Total: <span class="total-price">₱{{ getTotalPrice() }}</span></p>
+      <button class="payment-btn">Make Payment</button>
+    </div>
+  </div>
+</div>

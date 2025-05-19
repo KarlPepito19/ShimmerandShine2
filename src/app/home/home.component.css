@@ -2,10 +2,13 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: #f5e9e2; /* Light pinkish background */
+  background-color: #FFFFFF; /* Light pinkish background */
+  position: relative; /* Ensure proper positioning context */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* Header */
 .header {
   background: url('jewelry.jpg') no-repeat center;
   background-size: cover;
@@ -16,6 +19,7 @@
   font-weight: bold;
   flex-shrink: 0;
   position: relative; /* For potential overlay */
+  border-radius: 10px;
 }
 
 .header-text {
@@ -24,9 +28,8 @@
   margin-left: 1rem;
   display: flex;
   flex-direction: column; /* Stack vertically in mobile */
-  gap:8px; /* Space between SHIMMER and SHINE */
+  gap: 8px; /* Space between SHIMMER and SHINE */
   text-align: left;
-
 }
 
 .header-text .shimmer,
@@ -40,7 +43,6 @@
   .header {
     font-size: 20px;
     padding: 30px;
-    border-radius: 10px;
     text-align: center; /* Center align in desktop */
   }
 
@@ -58,7 +60,6 @@
   }
 }
 
-/* Search Bar */
 .search-bar {
   padding: 10px;
   display: flex;
@@ -72,11 +73,18 @@
   padding: 10px;
   border-radius: 20px;
   border: 1px solid #ccc;
-  background-color: #fff;
+  background-color: #fff; /* Ensure the input remains white */
   font-size: 16px;
 }
 
-/* Category Tabs */
+@media (min-width: 768px) {
+  .search-bar input {
+    width: 60%;
+    font-size: 18px;
+    padding: 12px;
+  }
+}
+
 .category-tabs {
   display: flex;
   flex-wrap: nowrap;
@@ -107,6 +115,8 @@
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   color: #757575;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.10);
+  
 }
 
 .category-tabs button.active {
@@ -116,21 +126,36 @@
 
 .category-tabs button:hover {
   background-color: #BF6A02;
+  color: white;
 }
 
-/* Jewelry Grid */
+@media (min-width: 768px) {
+  .category-tabs {
+    justify-content: center;
+    padding-left: 10px;
+  }
+
+  .category-tabs button {
+    min-width: 70px;
+    font-size: 13px;
+  }
+}
+
+.scrollable-grid {
+  flex-grow: 1;
+  max-height: calc(100vh - 300px); /* Adjust based on header, search bar, tabs, and bottom nav heights */
+  overflow-y: auto;
+  margin-bottom: 60px; /* Space for bottom navigation */
+}
+
 .jewelry-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  padding: 10px 15px;
-  overflow-y: auto;
-  flex-grow: 1;
-  max-height: calc(100vh - 180px);
+  gap: 20px;
+  padding: 15px 20px;
   min-height: 0;
 }
 
-/* Scrollbar styling */
 .jewelry-grid::-webkit-scrollbar {
   width: 8px;
 }
@@ -144,7 +169,14 @@
   background-color: #f5e9e2;
 }
 
-/* Jewelry Item Wrapper */
+@media (min-width: 768px) {
+  .jewelry-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
 .jewelry-item-wrapper {
   display: flex;
   flex-direction: column;
@@ -152,7 +184,12 @@
   margin: 0 5px;
 }
 
-/* Jewelry Item */
+@media (min-width: 768px) {
+  .jewelry-item-wrapper {
+    margin: 0 10px;
+  }
+}
+
 .jewelry-item {
   background-color: #fff;
   border-radius: 10px;
@@ -160,6 +197,18 @@
   text-align: center;
   width: 100%;
   aspect-ratio: 1 / 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 768px) {
+  .jewelry-item {
+    aspect-ratio: 4 / 3;
+    transition: transform 0.2s;
+  }
+
+  .jewelry-item:hover {
+    transform: scale(1.05);
+  }
 }
 
 /* Item-specific background images */
@@ -265,7 +314,6 @@
   background-repeat: no-repeat;
 }
 
-/* Item Details */
 .item-details {
   padding: 5px 10px;
   display: flex;
@@ -278,115 +326,72 @@
   font-size: 20px;
 }
 
-/* Heart Icon */
-.heart-icon {
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* Bottom Navigation */
-.bottom-nav {
-  display: flex;
-  justify-content: space-around;
-  padding: 10px;
-  background-color: #fff;
-  border-top: 1px solid #ccc;
-  position: sticky;
-  bottom: 0;
-  flex-shrink: 0;
-}
-
-.bottom-nav button {
-  background: none;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 10px;
-  border-radius: 10px;
-  transition: background-color 0.2s;
-}
-
-.bottom-nav button:hover {
-  background-color: #f0f0f0;
-}
-
-/* Desktop Styles */
 @media (min-width: 768px) {
-  .jewelry-item {
-    aspect-ratio: 4 / 3;
-    transition: transform 0.2s;
-  }
-  .jewelry-item:hover {
-    transform: scale(1.05);
-  }
-  .app-container {
-    padding: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .header {
-    font-size: 20px;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-  }
-
-  .search-bar input {
-    width: 60%;
-    font-size: 18px;
-    padding: 12px;
-  }
-
-  .category-tabs {
-    justify-content: center;
-    padding-left: 10px;
-  }
-
-  .category-tabs button {
-    min-width: 70px;
-    font-size: 13px;
-  }
-
-  .jewelry-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 20px;
-    max-height: calc(100vh - 220px);
-  }
-
-  .jewelry-item-wrapper {
-    margin: 0 10px;
-  }
-
-  .jewelry-item {
-    aspect-ratio: 4 / 3;
-    transition: transform 0.2s;
-  }
-
-  .jewelry-item:hover {
-    transform: scale(1.05);
-  }
-
   .item-details {
     font-size: 24px;
     padding: 10px 15px;
     min-height: 40px;
   }
+}
 
-  .heart-icon {
-    font-size: 24px;
-  }
+.bottom-nav-container {
+  width: 100%;
+  max-width: 1000px; /* Match the max-width of .app-container */
+  margin: 0 auto; /* Center it like .app-container */
+  position: relative; /* For absolute positioning of .bottom-nav */
+  flex-shrink: 0;
+}
 
-  .bottom-nav {
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 20px 20px 0 0;
+  position: sticky;
+  bottom: 0;
+  width: 100%; /* Takes the full width of .bottom-nav-container */
+}
+
+.bottom-nav button {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+@media (min-width: 768px) {
+  .bottom-nav button {
+    width: 70px; /* Increase button size */
+    height: 70px;
     padding: 10px;
   }
 
-  .bottom-nav button {
-    font-size: 18px;
-    padding: 5px 20px;
+  .bottom-nav button svg {
+    width: 32px; /* Increase SVG icon size */
+    height: 32px;
   }
+}
+
+.bottom-nav button:hover,
+.bottom-nav button:active {
+  background-color: #BF6A02; /* Change to orange on hover and click */
+}
+
+.bottom-nav button:hover svg,
+.bottom-nav button:active svg {
+  stroke: #fff; /* White stroke on hover and click for all icons */
+}
+
+.bottom-nav svg {
+  stroke: #BF6A02; /* Orange stroke for other icons in default state */
 }
